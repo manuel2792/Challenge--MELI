@@ -10,7 +10,7 @@ JOIN Order o
 WHERE EXTRACT(MONTH FROM c.BirthDate) = EXTRACT(MONTH FROM CURRENT_DATE()) AND EXTRACT(DAY FROM c.BirthDate) = EXTRACT(DAY FROM CURRENT_DATE()) 
 AND o.OrderDate BETWEEN '2020-01-01' AND '2020-01-31'
 AND c.usertype = 'Seller'
-GROUP BY c.CustomerID, c.FirstName, c.LastName, c.Email
+GROUP BY c.FirstName, c.LastName, c.Email
 HAVING COUNT(o.OrderID) > 1500;
 
 
